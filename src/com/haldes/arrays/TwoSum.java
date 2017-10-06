@@ -1,6 +1,7 @@
 package com.haldes.arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /*
 1. Two Sum
@@ -22,13 +23,17 @@ public class TwoSum {
 
         System.out.println("Hello World !!!");
 
-        int[] nums = {3, 2, 4};
-        int target = 6;
+        int[] nums = {3, 2, 4, 8, 9};
+        int target = 10;
         int[] ret = new int[2];
 
-        Solution sol = new Solution();
+        SolutionBruteForce sol = new SolutionBruteForce();
         int[] result = sol.twoSum(nums, target);
-        System.out.println("The result " + Arrays.toString(result));
+        System.out.println("The result Brute force O(N^2)" + Arrays.toString(result));
+
+        SolutionMapBased solMp = new SolutionMapBased();
+        int[] resultMap = solMp.twoSum(nums, target);
+        System.out.println("The result Map based O(N)" + Arrays.toString(resultMap));
 
 
     }
@@ -36,12 +41,38 @@ public class TwoSum {
 
 }
 
-class Solution {
+class SolutionMapBased {
+
+    public int[] twoSum(int[] nums, int target) {
+        int[] ret = new int[2];
+
+        HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (hmap.containsKey(nums[i])) {
+                ret[0] = i;
+                ret[1] = hmap.get(nums[i]);
+            } else {
+                //System.out.println(target-nums[i]+"--------"+i);
+                hmap.put(target-nums[i],i);
+            }
+
+
+        }
+
+        return ret;
+    }
+
+
+}
+
+class SolutionBruteForce {
     public int[] twoSum(int[] nums, int target) {
 
         int[] ret = new int[2];
 
-        for (int i = 0; i <= nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
                     ret[0] = i;
