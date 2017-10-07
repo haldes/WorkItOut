@@ -21,7 +21,7 @@ public class TwoSum {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World !!!");
+        System.out.println("Hello TwoSum !!!");
 
         int[] nums = {3, 2, 4, 8, 9};
         int target = 10;
