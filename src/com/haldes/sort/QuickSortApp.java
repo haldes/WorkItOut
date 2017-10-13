@@ -8,7 +8,7 @@ public class QuickSortApp {
 
         System.out.println("Hello Quick Sort !!!");
 
-        int[] nums = {3, 5, 9, 2, 10, 11,7, 6};
+        int[] nums = {8,7,6,5,4,3,2,1};
 
         QuickSort qs = new QuickSort();
 
@@ -31,7 +31,7 @@ class QuickSort {
         }
 
         // find pivot as the last element
-        int pivot = nums[nums.length -1];
+        int pivot = nums[nums.length / 2];
         System.out.println("Pivot value : "+pivot);
 
         // Get the left and right sub-arrays counts
