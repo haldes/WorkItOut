@@ -1,6 +1,8 @@
 package com.haldes.recursion;
 
 /*
+
+http://codingbat.com/java/Recursion-1
 We have bunnies standing in a line, numbered 1, 2, ... The odd bunnies (1, 3, ..) have the normal 2 ears. 
 The even bunnies (2, 4, ..) we'll say have 3 ears, because they each have a raised foot. 
 Recursively return the number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).
@@ -49,7 +51,7 @@ class BunnyEarsSolution {
 			result =  2;
 		}
 
-		result = result + SolRecursive(nums - 1);
+		result = result + SolRecursive  (nums - 1);
 
 		return result;
 	}
