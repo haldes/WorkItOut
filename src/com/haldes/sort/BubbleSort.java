@@ -8,7 +8,22 @@ import java.util.stream.Collectors;
 public class BubbleSort {
     public static List<Integer> sortList(List<Integer> unsortedList) {
         // WRITE YOUR BRILLIANT CODE HERE
+        for(int i = unsortedList.size() - 1 ; i >= 0 ; i--){
+            System.out.println("===> " + i);
+            int swapIdx = -1;
+            for(int j = 0 ; j < i; j++) {
+                System.out.println(j);
+                if(unsortedList.get(j) > unsortedList.get(j+1)){
+                    // swap
+                    int temp = unsortedList.get(j);
+                    unsortedList.set(j, unsortedList.get(j+1));
+                    unsortedList.set(j+1, temp);
+                }
+            }
+            System.out.println("-----------");
+        }
 
+        System.out.println("=========Final Result===========");
         return unsortedList;
     }
 
